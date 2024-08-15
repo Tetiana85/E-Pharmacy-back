@@ -71,6 +71,27 @@ export const addToOrders = async (req, res, next) => {
     next(error);
   }
 };
+
+// export const addToOrders = async (req, res, next) => {
+//   try {
+//     console.log("Received order data:", req.body); // Логируем данные, которые приходят в контроллер
+//     const { error } = orderSchema.validate(req.body);
+//     if (error) {
+//       console.log("Validation error:", error.details); // Логируем ошибку валидации
+//       return res.status(400).json({ error: error.details }); // Возвращаем ошибку валидации
+//     }
+
+//     const newOrder = new Order(req.body);
+//     await newOrder.save();
+//     console.log("Order successfully saved to database."); // Логируем успешное сохранение
+
+//     res.status(200).json("Order successfully added");
+//   } catch (error) {
+//     console.error("Error adding order:", error); // Логируем ошибку
+//     next(error);
+//   }
+// };
+
 export const clearCart = async (req, res) => {
   try {
     const userId = req.user.id;

@@ -20,7 +20,7 @@ const orderSchema = new Schema(
     },
     paymentMethod: {
       type: String,
-      enum: ["cash", "card", "paypal"],
+      enum: ["Cash On Delivery", "Bank"],
       required: true,
     },
     totalAmount: {

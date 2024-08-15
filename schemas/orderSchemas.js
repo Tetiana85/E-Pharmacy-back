@@ -5,7 +5,7 @@ export const orderSchema = Joi.object({
   phone: Joi.string().required(),
   address: Joi.string().required(),
   email: Joi.string().email().required(),
-  paymentMethod: Joi.string().required(),
+  paymentMethod: Joi.string().valid("Cash On Delivery", "Bank").required(),
   totalAmount: Joi.number().min(0).required(),
   products: Joi.array().items(Joi.string().required()).required(),
 });
